@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fb;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .form-box {
+            width: 360px;
+            min-height: 400px;
+            background-color: white;
+            border: 1px solid #d9dee7;
+            border-radius: 7px;
+            padding: 28px 25px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            margin: 0 0 18px;
+            font-size: 19px;
+            color: #202938;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: center;
+            font-size: 9px;
+            font-weight: bold;
+            color: #4b5563;
+            margin-bottom: 5px;
+        }
+
+        label span {
+            color: #2864e8;
+            font-family: monospace;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            height: 34px;
+            padding: 8px 12px;
+            border: 1px solid #dce1e8;
+            border-radius: 4px;
+            outline: none;
+            font-size: 13px;
+            color: #4b5563;
+            background-color: white;
+        }
+
+        input:focus {
+            border: 2px solid #2f6fed;
+        }
+
+        #email {
+            border: 2px solid #2f6fed;
+            padding-right: 35px;
+            font-family: monospace;
+        }
+
+        .check {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #2f6fed;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #password {
+            font-family: monospace;
+            letter-spacing: 2px;
+        }
+
+        button {
+            width: 100%;
+            height: 37px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #2864e8;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e55c7;
+        }
+
+        .note {
+            margin: 10px 4px 0;
+            font-size: 9px;
+            color: #596273;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="form-box">
+
+        <h2>Sign Up Form</h2>
+
+        <div class="form-group">
+
+            <label for="email">
+                Email Address <span>required</span>
+            </label>
+
+            <div class="input-box">
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="student@edu.com"
+                    required
+                >
+
+                <span class="check">✓</span>
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="password">
+                Password <span>minlength="8"</span>
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                value="12345678901"
+                minlength="8"
+                required
+            >
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="phone">
+                Phone Number <span>pattern</span>
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value="555-019-2834"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                required
+            >
+
+        </div>
+
+        <button type="submit">
+            SUBMIT FORM
+        </button>
+
+        <p class="note">
+            * Native browser validation triggers instantly on client click.
+        </p>
+
+    </form>
+
+</body>
+
+</html>
