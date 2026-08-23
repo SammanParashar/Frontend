@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Browser Mockup</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            background-color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+        }
+
+        .browser {
+            width: 900px;
+            max-width: 100%;
+            margin: auto;
+            border: 2px solid #555;
+            border-radius: 7px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .browser-bar {
+            height: 38px;
+            border-bottom: 1px solid #777;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            gap: 10px;
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 5px;
+        }
+
+        .browser-dots span {
+            width: 9px;
+            height: 9px;
+            border: 1px solid #555;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .address-bar {
+            flex: 1;
+            height: 22px;
+            border: 1px solid #777;
+            font-size: 10px;
+            padding: 4px 8px;
+            color: #444;
+        }
+
+        header {
+            border: 2px solid #456ca3;
+            margin: 8px 10px 5px;
+            padding: 7px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+            color: #315b91;
+        }
+
+        nav {
+            border: 2px solid #456ca3;
+            margin: 0 10px 8px;
+            padding: 7px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        nav a {
+            color: #222;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .page-layout {
+            display: grid;
+            grid-template-columns: 1fr 135px;
+            gap: 10px;
+            margin: 0 10px;
+        }
+
+        main {
+            border: 2px solid #456ca3;
+            padding: 8px;
+            min-width: 0;
+        }
+
+        .intro {
+            border: 2px solid #456ca3;
+            padding: 10px;
+            margin-bottom: 8px;
+        }
+
+        .intro h2 {
+            margin: 0 0 8px;
+            font-size: 17px;
+        }
+
+        .intro p {
+            margin: 5px 0;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 180px;
+            gap: 8px;
+        }
+
+        article {
+            border: 2px solid #456ca3;
+            padding: 10px;
+        }
+
+        article h2 {
+            margin: 0 0 8px;
+            font-size: 17px;
+        }
+
+        article h3 {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        article p {
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .line {
+            height: 2px;
+            background: #777;
+            margin: 7px 0;
+        }
+
+        form {
+            border: 2px solid #456ca3;
+            padding: 8px;
+        }
+
+        fieldset {
+            border: 1px solid #777;
+            padding: 8px;
+        }
+
+        legend {
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            font-size: 11px;
+            margin-top: 7px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            margin-top: 4px;
+            padding: 5px;
+            border: 1px solid #777;
+            font-size: 10px;
+        }
+
+        button {
+            margin-top: 8px;
+            padding: 5px 10px;
+            border: 1px solid #555;
+            background: white;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        button:hover {
+            background: #eee;
+        }
+
+        .right-aside {
+            border: 2px solid #456ca3;
+            padding: 8px;
+        }
+
+        .right-aside h3 {
+            margin: 0 0 8px;
+            font-size: 14px;
+        }
+
+        .right-aside a {
+            display: block;
+            color: #333;
+            font-size: 11px;
+            margin: 7px 0;
+        }
+
+        footer {
+            border: 2px solid #456ca3;
+            margin: 8px 10px 10px;
+            padding: 7px;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        @media (max-width: 700px) {
+            .page-layout,
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .right-aside {
+                margin-top: 8px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="browser">
+
+        <div class="browser-bar">
+
+            <div class="browser-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="address-bar">
+                https://www.academic-semantics.org/layout
+            </div>
+
+            <span>↻</span>
+            <span>⌂</span>
+
+        </div>
+
+        <header>
+            <h1>[SITE TITLE]</h1>
+        </header>
+
+        <nav>
+            <a href="#">Home</a> |
+            <a href="#">Articles</a> |
+            <a href="#">Research</a> |
+            <a href="#">About</a> |
+            <a href="#">Contact</a>
+        </nav>
+
+        <div class="page-layout">
+
+            <main>
+
+                <section class="intro">
+
+                    <h2>Heading line</h2>
+
+                    <p>
+                        This is an introduction section of the
+                        academic semantic website.
+                    </p>
+
+                    <p>
+                        Semantic HTML provides a meaningful structure
+                        to the webpage.
+                    </p>
+
+                </section>
+
+                <div class="content-layout">
+
+                    <article>
+
+                        <h2>Title title</h2>
+
+                        <h3>Title title</h3>
+
+                        <p>
+                            <strong>meta</strong> |
+                            <strong>date</strong> |
+                            <strong>30 May 2023</strong>
+                        </p>
+
+                        <div class="line"></div>
+
+                        <p>
+                            Body text of the article goes here.
+                            This section contains information about
+                            the research article.
+                        </p>
+
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+
+                    </article>
+
+                    <form action="/search" method="get">
+
+                        <fieldset>
+
+                            <legend>SEARCH THE ARCHIVE</legend>
+
+                            <label for="keyword">
+                                Keyword:
+                            </label>
+
+                            <input
+                                type="text"
+                                id="keyword"
+                                name="keyword"
+                                placeholder="Quantum Computing..."
+                            >
+
+                            <label for="filter">
+                                Filter By:
+                            </label>
+
+                            <select id="filter" name="filter">
+
+                                <option value="">
+                                    &lt;select&gt;
+                                </option>
+
+                                <option value="research">
+                                    Research
+                                </option>
+
+                                <option value="article">
+                                    Article
+                                </option>
+
+                                <option value="news">
+                                    News
+                                </option>
+
+                            </select>
+
+                            <label for="date">
+                                Date:
+                            </label>
+
+                            <input
+                                type="date"
+                                id="date"
+                                name="date"
+                            >
+
+                            <label>
+                                Start:
+                            </label>
+
+                            <input
+                                type="date"
+                                name="start"
+                            >
+
+                            <label>
+                                End:
+                            </label>
+
+                            <input
+                                type="date"
+                                name="end"
+                            >
+
+                            <button type="submit">
+                                SEARCH
+                            </button>
+
+                        </fieldset>
+
+                    </form>
+
+                </div>
+
+            </main>
+
+            <aside class="right-aside">
+
+                <h3>Articles</h3>
+
+                <a href="#">Research</a>
+                <a href="#">About</a>
+                <a href="#">Links</a>
+
+            </aside>
+
+        </div>
+
+        <footer>
+
+            © 2023 Academic Semantics |
+
+            <a href="#">Home</a> |
+            <a href="#">Articles</a> |
+            <a href="#">Research</a> |
+            <a href="#">About</a> |
+            <a href="#">Contact</a> |
+            <a href="#">Sitemap</a> |
+            <a href="#">Privacy Policy</a>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
